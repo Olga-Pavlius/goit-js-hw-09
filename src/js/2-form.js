@@ -14,7 +14,7 @@ let formData = {
 const fillFormFields = event => {
   try { 
     const formDataFromLS = JSON.parse(localStorage.getItem('feedback-form-state'));
-    if (localStorage.length === null) {
+    if (formDataFromLS === null) {
       return;
     }
 
@@ -56,7 +56,6 @@ const formEl = event.currentTarget;
   formEl.reset();
   localStorage.removeItem('feedback-form-state');
 };
-
 
 feedbackFormEl.addEventListener('change', onFormFieldChange);
 feedbackFormEl.addEventListener('submit', onFeedbackFormSubmit);
