@@ -29,7 +29,7 @@ const fillFormFields = event => {
 
 fillFormFields();
 
-const onFormFieldChange = event => {
+const onFormFieldInput = event => {
   const { target: formFieldEl } = event;
 
   const fieldValue = formFieldEl.value;
@@ -48,14 +48,14 @@ const onFeedbackFormSubmit = event => {
     return;
    }
 
-console.log(formData);
+  console.log(formData);
 
-formData = {};
-const formEl = event.currentTarget;
+  formData = {};
+  const formEl = event.currentTarget;
 
   formEl.reset();
   localStorage.removeItem('feedback-form-state');
 };
 
-feedbackFormEl.addEventListener('change', onFormFieldChange);
+feedbackFormEl.addEventListener('input', onFormFieldInput);
 feedbackFormEl.addEventListener('submit', onFeedbackFormSubmit);
